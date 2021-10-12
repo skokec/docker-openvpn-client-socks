@@ -11,7 +11,7 @@ FROM alpine
 COPY sockd.sh /usr/local/bin/
 
 RUN true \
-    && apk add --update-cache dante-server openvpn bash openresolv openrc \
+    && apk add --update-cache dante-server openvpn bash openresolv openrc dhclient \
     && rm -rf /var/cache/apk/* \
     && chmod a+x /usr/local/bin/sockd.sh \
     && true
